@@ -22,7 +22,11 @@
                     <td><?= htmlspecialchars($task['title']) ?></td>
                     <td><?= htmlspecialchars($task['description']) ?></td>
                     <td><?= htmlspecialchars($task['status']) ?></td>
-                    <td><?= htmlspecialchars($task['created_at']) ?></td>
+                    <td><?php 
+                        $mois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+                        $date = DateTime::createFromFormat('Y-m-d H:i:s', $task['created_at']);
+                        echo $date->format('d') . ' ' . $mois[$date->format('n') - 1] . ' ' . $date->format('Y H:i');
+                    ?></td>
                     <td>
                         <a href="?id=<?= $task['id'] ?>&action=voir" class="btn btn-info btn-sm">Voir</a>
                         <a href="?id=<?= $task['id'] ?>&action=modifier" class="btn btn-warning btn-sm">Modifier</a>
