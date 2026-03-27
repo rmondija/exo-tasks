@@ -25,7 +25,7 @@
                     <td><?php 
                         $mois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
                         $date = DateTime::createFromFormat('Y-m-d H:i:s', $task['created_at']);
-                        echo $date->format('d') . ' ' . $mois[$date->format('n') - 1] . ' ' . $date->format('Y H:i');
+                        echo $date->format('d') . ' ' . $mois[$date->format('n') - 1] . ' ' . $date->format('Y') . ' à ' . $date->format('H:i');
                     ?></td>
                     <td>
                         <a href="?id=<?= $task['id'] ?>&action=voir" class="btn btn-info btn-sm">Voir</a>

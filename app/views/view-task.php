@@ -8,11 +8,11 @@
     <p><strong>Créée le :</strong> <?php 
         $mois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
         $date = DateTime::createFromFormat('Y-m-d H:i:s', $task['created_at']);
-        echo $date->format('d') . ' ' . $mois[$date->format('n') - 1] . ' ' . $date->format('Y H:i');
+        echo $date->format('d') . ' ' . $mois[$date->format('n') - 1] . ' ' . $date->format('Y') . ' à ' . $date->format('H:i');
     ?></p>
     <p><strong>Dernière mise à jour :</strong> <?php 
         $date = DateTime::createFromFormat('Y-m-d H:i:s', $task['updated_at']);
-        echo $date->format('d') . ' ' . $mois[$date->format('n') - 1] . ' ' . $date->format('Y H:i');
+        echo $date->format('d') . ' ' . $mois[$date->format('n') - 1] . ' ' . $date->format('Y') . ' à ' . $date->format('H:i');
     ?></p>
 
     <a href="?id=<?= htmlspecialchars($task['id']) ?>&action=modifier" class="btn btn-warning">Modifier</a>
