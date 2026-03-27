@@ -14,7 +14,10 @@
         </div>
         <div class="mb-3">
             <label for="status" class="form-label">Statut :</label>
-            <input type="text" class="form-control" id="status" name="status" value="<?= htmlspecialchars($task['status']) ?>" required>
+            <select class="form-control" id="status" name="status" required>
+                <option value="en cours" <?= $task['status'] === 'en cours' ? 'selected' : '' ?>>En cours</option>
+                <option value="terminée" <?= $task['status'] === 'terminée' ? 'selected' : '' ?>>Terminée</option>
+            </select>
         </div>
         <button type="submit" class="btn btn-success">Mettre à jour</button>
     </form>
