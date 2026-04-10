@@ -8,10 +8,6 @@ require_once __DIR__ . '/app/controllers/AdminController.php';
 $taskController = new TaskController();
 $adminController = new AdminController();
 
-if (!isset($_SESSION['username'])) {
-    $adminController->index();
-}
-
 if (isset($_GET['action']) && $_GET['action'] == 'create' && isset($_POST['title']) && !empty($_POST['title']) && isset($_POST['description']) && !empty($_POST['description']) && isset($_POST['status']) && !empty($_POST['status']) ) {
     $taskController->createTask($_POST['title'], $_POST['description'], $_POST['status']);
 } if (isset($_GET['action']) && $_GET['action'] == 'update' && isset($_POST['title']) && !empty($_POST['title']) && isset($_POST['description']) && !empty($_POST['description']) && isset($_POST['status']) && !empty($_POST['status']) ) {
@@ -31,5 +27,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'create' && isset($_POST['title
 } elseif (isset($_GET['action']) && $_GET['action'] === 'disconnect') {
     $adminController->disconnect();
 } else {
-    $taskController->listAllTasks();
+    if (!isset($_SESSION['username'])) {
+        $adminController->index();
+    } else {
+        $taskController->listAllTasks();
+    }
 }

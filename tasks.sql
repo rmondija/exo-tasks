@@ -10,7 +10,6 @@ CREATE TABLE `tasks` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-
 INSERT INTO tasks (title, description, status, created_at, updated_at) VALUES
 ('Acheter du pain', 'Aller à la boulangerie pour acheter du pain frais.', 'en cours', NOW(), NOW()),
 ('Réviser le cours de PHP', 'Relire les notions de MVC et DAO pour le prochain projet.', 'en cours', NOW(), NOW()),

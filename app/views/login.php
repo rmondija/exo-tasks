@@ -24,6 +24,14 @@
 
             <button type="submit" class="btn btn-primary w-100">Se connecter</button>
         </form>
+
+        <hr>
+
+        <div class="alert alert-info mt-4" role="alert">
+            <h5 class="alert-heading">Identifiants de test</h5>
+            <p class="mb-2"><strong>Nom d'utilisateur :</strong> administrateur</p>
+            <p class="mb-0"><strong>Mot de passe :</strong> 1234</p>
+        </div>
     </div>
 
 </div>
